@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Woodsong Cottage</title>
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="cart.js"></script>
+
+</head>
+<body>
+<div class="header">
+<div class="container">
+	<div class="navbar">
+		<div class="logo">
+			<img src="images/frugallogo.png" class="logo-image">
+		</div>
+	<nav>
+		<ul id="menuitems">
+			<li><a href ="home.html">Home</a></li>
+			<li><a href ="About.html">About</a></li>
+			<li><a href ="contact.html">Contact</a></li>
+			<li><a href ="gallery.html">Gallery</a></li>
+			<li><a href ="bookings and rates.html">Bookings and Rates</a></li>
+			<li><a href ="signUp.html">Sign Up</a></li>
+			<li><a href ="login.html">Log In</a></li>
+			<li><a href = "logout.php">Logout</a></li>
+		</ul>
+	</nav>
+	<img src="images/menuicon.png" class="menu-icon" 
+	onclick="menutoggle()">
+</div>
+<div class="row">
+	<div class=".col-2">
+		<img src="images/img1.png">
+	</div>
+	<div class=".col-2">
+		<h1><br>Book Now!</br></h1>
+		<p>You shouldn't have to pay an arm and leg to have a getaway!</p>
+		<a href="" class="btn">Book Your Stay &#10146;</a>
+	</div>
+	
+</div>
+</div>
+</div>
+<!-------- Featured Products --------->
+<div class ="small-container">
+	<h2 class="title">Fresh Farm Produce<h2>
+	<div class="row">
+		<div class="col-4">
+			<img class="product-image" src="images/jeans.jpg">
+			<div class="product-details">
+				<span class="product-title"><h4>Honey</h4></span>
+				<span class="product-price">R80.00 per Bottle</span>
+				<button class="btn btn-primary product-button" type="button">Cart &ensp;<i class="fa fa-plus"></i></button>
+			</div>	
+		</div>
+		<div class="col-4">
+			<img class="product-image" src="images/shades1.jpg">
+			<div class="product-details">
+				<span class="product-title"><h4>Spinach</h4></span>
+				<span class="product-price">R50.00 per Bunch</span>
+				<button class="btn btn-primary product-button" type="button">Cart &ensp;<i class="fa fa-plus"></i></button>
+			</div>	
+		</div>
+		<div class="col-4">
+			<img class="product-image" src="images/combat.jpg">
+			<div class="product-details">
+				<span class="product-title"><h4>Cream Cheese</h4></span>
+				<span class="product-price">R60.00</span>
+				<button class="btn btn-primary product-button" type="button">Cart &ensp;<i class="fa fa-plus"></i></button>
+			</div>	
+		</div>
+		<div class="col-4">
+			<img class="product-image" src="images/trench.jpg">
+			<div class="product-details">
+				<span class="product-title"><h4>Smoked Trout</h4></span>
+				<span class="product-price">R100.00</span>
+				<button class="btn btn-primary product-button" type="button">Cart &ensp;<i class="fa fa-plus"></i></button>
+			</div>	
+		</div>
+	</div>
+<!------ Latest Products --------->
+	<h2 class="title">Homemade Meals</h2>
+	<div class="row">
+		<div class="col-4">
+			<img class="product-image" src="images/backpack.jpg">
+			<div class="product-details">
+				<span class="product-title"><h4>Roast Leg of Lamb</h4></span>
+				<span class="product-price">R230.00</span>
+				<button class="btn btn-primary product-button" type="button">Cart &ensp;<i class="fa fa-plus"></i></button>
+			</div>
+		</div>
+		<div class="col-4">
+			<img class="product-image" src="images/beanie.jpg">
+			<div class="product-details">
+				<span class="product-title"><h4>Potato and Leek Soup</h4></span>
+				<span class="product-price">R45.00</span>
+				<button class="btn btn-primary product-button" type="button">Cart &ensp;<i class="fa fa-plus"></i></button>
+			</div>	
+		</div>
+		<div class="col-4">
+			<img class="product-image" src="images/rings.jpg">
+			<div class="product-details">
+				<span class="product-title"><h4>Oxtail Stew</h4></span>
+				<span class="product-price">R200.00</span>
+				<button class="btn btn-primary product-button" type="button">Cart &ensp;<i class="fa fa-plus"></i></button>
+			</div>	
+		</div>
+		<div class="col-4">
+			<img class="product-image" src="images/flanel.jpg">
+			<div class="product-details">
+				<span class="product-title"><h4>Trout and Vegetables</h4></span>
+				<span class="product-price">R150.00</span>
+				<button class="btn btn-primary product-button" type="button">Cart &ensp;<i class="fa fa-plus"></i></button>
+			</div>	
+		</div>
+	</div>
+</div>
+<!-- More product items -->
+  <section class="container content-section">
+		<h2 class="section-header">Cart</h2>
+		<div class="cart-row">
+			<span class="cart-item cart-header cart-column">Item</span>
+			<span class="cart-price cart-header cart-column">Price</span>
+			<span class="cart-quantity cart-header cart-column">Quantity</span>
+		</div>
+		<div class="cart-items">
+		<!-- Cart items will be dynamically added here -->
+		</div>
+		<div class="cart-total">
+			<strong class="cart-total-title">Total</strong>
+			<span class="cart-total-price">R00.00</span>
+		</div>
+		<a href="payment.html" button class="btn btn-primary btn-purchase" type="button">PURCHASE</button>
+  </section>
+
+
+<!------- testimonial ------->
+<div class="testimonial">
+	<div class="small-container">
+		<div class="row">
+			<div class="col-3">
+				<i class="fa fa-quote-left"></i>
+				<p>Generic product review for purposes of the project!</p>
+				<div class="rating">
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+				</div>
+				<img src="images/pic-4.png">
+				<h3>Jane Doe</h3>
+			</div>
+			<div class="col-3">
+				<i class="fa fa-quote-left"></i>
+				<p>Generic product review for purposes of the project!</p>
+				<div class="rating">
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+				</div>
+				<img src="images/pic-3.png">
+				<h3>John Doe</h3>
+			</div>
+			<div class="col-3">
+				<i class="fa fa-quote-left"></i>
+				<p>Generic product review for purposes of the project!</p>
+				<div class="rating">
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+				</div>
+				<img src="images/pic-1.png">
+				<h3>Michael Marks</h3>
+			</div>		
+		</div>
+	</div>
+</div>
+
+
+<!------ footer ------->
+<div class="footer">
+	<div class="container">
+		<div class="row">
+			<div class="footer-col-2">
+				<img src="images/frugallogo.png">
+				<p>You shouldn't have to pay an arm and leg to look as good as you feel.</p>
+				<h3>Contact</h3>
+				<p><strong>Address: </strong>22 Umgazi Rd, Ashlea Gardens, Pretoria, 0081</p>
+				<p><strong>Phone: </strong>012 348 3060</p>
+				<p><strong>Hours </strong>08:00 - 16:30 Mon - Fri</p>
+			</div>
+				
+			<div class="footer-col-3">
+				<h3>Useful Links</h3>
+				<ul>
+				
+				<li>Blog Post</li>
+				<li>Return Policy</li>
+				
+				</ul>
+			</div>
+			<div class="footer-col-4">
+			<!-- Useful links -->
+				<h3>Follow Us</h3>
+				<ul>
+			<!-- Social media links -->
+				<li>Facebook</li>
+				<li>Twitter</li>
+				<li>Instagram</li>
+				<li>Youtube</li>
+				</ul>
+			</div>
+		</div>
+		<hr>
+		<p class="copyright">Copyright 2022 - Woodsong Cottage</p>
+	</div>
+</div>
+<!---------- js for toggle menu ----------->
+
+<script>
+	var menuitems = document.getElementById("menuitems");
+	
+	menuitems.style.maxHeight = "0px";
+	
+	function menutoggle(){
+		if(menuitems.style.maxHeight == "0px")
+			{
+				menuitems.style.maxHeight = "200px";
+			}
+		else
+			{
+				menuitems.style.maxHeight = "0px";
+			}
+		
+	}
+</script>	
+</body>
+</html>	

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<!-- custom css file link  -->
+<link rel="stylesheet" href="payment.css">
+<!----JavaScript for Form Validation---->>
+<script>
+    function Payments_function() {
+        // Retrieve form input values
+        var Fname = document.forms.PayForm.Fname.value;
+        var Email = document.forms.PayForm.Email.value;
+        var Address = document.forms.PayForm.Address.value;
+        var City = document.forms.PayForm.City.value;
+        var Nation = document.forms.PayForm.Nation.value;
+        var Zip = document.forms.PayForm.Zip.value;
+        var Cardname = document.forms.PayForm.Cardname.value;
+        var Cardnum = document.forms.PayForm.Cardnum.value;
+        var Expmonth = document.forms.PayForm.Expmonth.value;
+        var Expyear = document.forms.PayForm.Expyear.value;
+        var cvv = document.forms.PayForm.cvv.value;
+    // Regular expressions for validation
+        var regEmail=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/g;                                       
+    
+        var regFname = /\d+$/g;
+        var regZip=/^\d{10}$/;
+        var regCardnum=/^\d{10}$/;
+        var Expyear=/^\d{10}$/;
+        var cvv=/^\d{10}$/;
+        var regCardname = /\d+$/g;
+    // Validation checks
+    if (Fname == "" && regFname.test(Fname))
+    {
+        window.alert("Please enter your Full name.");
+        Fname.focus();
+        return false;
+    }
+    
+    if (Email == "" && regEmail.test(Email))
+    {
+        window.alert("Please enter a valid Email.");
+        Email.focus();
+        return false;
+    }
+    
+    if (Address == "")
+    {
+        window.alert("Please enter your Address.");
+        Address.focus();
+        return false;
+    }
+    
+    if (City == "")
+    {
+        window.alert("Please enter the name of your City.");
+        City.focus();
+        return false;
+    }
+    
+    if (Nation =="")
+    {
+        window.alert("Please enter your Nation");
+        Nation.focus();
+        return false;
+    }
+    
+    if (Zip == "" && regZip.test(Zip))
+    {
+        window.alert("Please enter a valid Zip Code.");
+        Zip.focus();
+        return false;
+    }
+
+    if (Zip.length <4)
+    {
+        alert("Zip code should be atleast 4 characters long.");
+        Zip.focus();
+        return false;
+    }
+    
+    if (Cardname == "" && regCardname.test(Cardname))
+    {
+        window.alert("Please enter the name(s) that appears on your card correctly.");
+        Cardname.focus();
+        return false;
+    }
+    
+    if (Cardnum == "" && regCardnum.test(Cardnum))
+    {
+        window.alert("Enter your card number");
+        Cardnum.focus();
+        return false;
+    }
+
+    if (Cardnum.length <16)
+    {
+        alert("Card number must be 16 digits long");
+        Cardnum.focus();
+        return false;
+    }
+    
+    if (Expmonth == "")
+    {
+        window.alert("Please enter the right expiry month.");
+        Expmonth.focus();
+        return false;
+    }
+    
+    if (Expyear == "")
+    {
+        window.alert("Please enter the expiry year of the card.");
+        Expyear.focus();
+        return false;
+    }
+
+    if (Expyear.length <4)
+    {
+        alert("Year must be 4 digits long.");
+        Expyear.focus();
+        return false;
+    }
+    
+    if (cvv.length == "")
+    {
+        window.alert("Please enter the CVV number");
+        cvv.focus();
+        return false;
+    }
+
+    if (cvv.length <3)
+    {
+        alert("Cvv number must be 3 digits long");
+        cvv.focus();
+        return false;
+    }
+    
+    return true;
+} 
+</script>
+</head>
+<body>
+
+<div class="container">
+
+<form name="PayForm" onsubmit="return Payments_function()" method="post">
+
+<div class="row">
+
+<div class="col">
+
+<h3 class="title">Billing Address</h3>
+<!-- Input fields for billing address -->
+<div class="inputBox">
+    <span>Full Name :</span>
+    <input type="text" name="Fname" placeholder="John Doe">
+</div>
+<div class="inputBox">
+    <span>Email :</span>
+    <input type="email" name="Email" placeholder="example@example.com">
+</div>
+<div class="inputBox">
+    <span>Address :</span>
+    <input type="text" name="Address" placeholder="Street - Suburb - Province">
+</div>
+<div class="inputBox">
+    <span>City :</span>
+    <input type="text" name="City" placeholder="Pretoria">
+</div>
+
+<div class="flex">
+    <div class="inputBox">
+        <span>Nation :</span>
+        <input type="text" name="Nation" placeholder="South Africa">
+    </div>
+    <div class="inputBox">
+        <span>Zip Code :</span>
+        <input type="number" name="Zip" placeholder="1234">
+    </div>
+</div>
+
+</div>
+
+<div class="col">
+
+<h3 class="title">Payment</h3>
+<!-- Input fields for payment details -->
+<div class="inputBox">
+    <span>Cards Accepted :</span>
+    <img src="images/card_img.png" alt="">
+</div>
+<div class="inputBox">
+    <span>Name On Card :</span>
+    <input type="text" name="Cardname" placeholder="Mr. John Doe">
+</div>
+<div class="inputBox">
+    <span>Credit Card Number :</span>
+    <input type="number" name="Cardnum" placeholder="1111-2222-3333-4444">
+</div>
+<div class="inputBox">
+    <span>Expiration Month :</span>
+    <input type="text" name="Expmonth" placeholder="February">
+</div>
+
+<div class="flex">
+    <div class="inputBox">
+        <span>Expiration Year :</span>
+        <input type="number" name="Expyear" placeholder="2022">
+    </div>
+    <div class="inputBox">
+        <span>CVV :</span>
+        <input type="number" name="cvv" placeholder="123">
+    </div>
+</div>
+
+</div>
+
+</div>
+
+<input type="submit" value="Proceed To Checkout" class="submit-btn">
+
+</form>
+
+</div>    
+
+</body>
+</html>
