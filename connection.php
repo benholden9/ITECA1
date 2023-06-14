@@ -2,7 +2,7 @@
 // Database configuration
 $dbhost = "ITECA";
 $dbuser = "root";
-$dbpass = "Snowyholden9!";
+$dbpass = "";
 $dbname = "userdatabase";
 
 // Attempt to establish a connection to the database
